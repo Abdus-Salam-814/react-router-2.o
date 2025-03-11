@@ -8,16 +8,20 @@ import Photos from './component/photos/Photos.jsx'
 import Users from './component/Users/Users.jsx'
 import Funs from './fun/Funs.jsx'
 import Fun1 from './fun/fun-post/Fun1.jsx'
+import UserDetails from './userDeatails/UserDetails.jsx'
+import ErrorPage from './ErrorPage/ErrorPage.jsx'
 
 
 const route = createBrowserRouter([
   {
     path:'/',
     element: <Home></Home>,
+    errorElement: <ErrorPage></ErrorPage>,
    children:[
     {
       path: '/photo',
       element: <Photos></Photos>
+      
     },
     {
       path:'/about',
@@ -30,6 +34,11 @@ const route = createBrowserRouter([
       element:<Users></Users>
   
     },
+    {
+      path: 'user/:userId',
+      loader: ({params})=> fetch(`https://jsonplaceholder.typicode.com/users/${params.userId}`),
+      element: <UserDetails></UserDetails>
+    }
    ]
   },
   
