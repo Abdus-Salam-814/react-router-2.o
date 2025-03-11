@@ -10,6 +10,7 @@ import Funs from './fun/Funs.jsx'
 import Fun1 from './fun/fun-post/Fun1.jsx'
 import UserDetails from './userDeatails/UserDetails.jsx'
 import ErrorPage from './ErrorPage/ErrorPage.jsx'
+import Form from './Form/Form.jsx'
 
 
 const route = createBrowserRouter([
@@ -21,6 +22,11 @@ const route = createBrowserRouter([
     {
       path: '/photo',
       element: <Photos></Photos>
+      
+    },
+    {
+      path: '/form',
+      element: <Form></Form>
       
     },
     {
