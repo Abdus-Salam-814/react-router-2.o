@@ -11,6 +11,7 @@ import Fun1 from './fun/fun-post/Fun1.jsx'
 import UserDetails from './userDeatails/UserDetails.jsx'
 import ErrorPage from './ErrorPage/ErrorPage.jsx'
 import Form from './Form/Form.jsx'
+import StateForm from './StateForm/StateForm.jsx'
 
 
 const route = createBrowserRouter([
@@ -27,6 +28,11 @@ const route = createBrowserRouter([
     {
       path: '/form',
       element: <Form></Form>
+      
+    },
+    {
+      path: '/stateForm',
+      element: <StateForm></StateForm>
       
     },
     {
