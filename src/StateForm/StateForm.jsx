@@ -1,13 +1,22 @@
 import { useState } from "react";
 
 const StateForm = () => {
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [pass, setPass] = useState("");
+    const [name, setName] = useState(`abdus salam`);
+    const [email, setEmail] = useState(null);
+    const [pass, setPass] = useState(null);
+    const [error, setError] = useState('')
 
     const onSubmitHendel = (e) => {
         e.preventDefault();
-        console.log(name, email, pass);
+        if(pass.length < 6){
+            setError('Please give password 6 caricter or longer.')
+        }else{
+            setError('');
+            console.log(name, email, pass);
+        }
+       
+
+
     };
 
     const onChangeHandelName = (e) => {
@@ -28,6 +37,7 @@ const StateForm = () => {
                 <input
                     onChange={onChangeHandelName}
                     placeholder="Enter name"
+                    value={name}
                     className="bg-gray-100 p-4 mt-6"
                     type="text"
                     name="name"
@@ -57,7 +67,11 @@ const StateForm = () => {
                     type="submit"
                     value="Submit"
                 />
+                {
+                    error && <p className="text-red-400 mt-6">{error}</p>
+                }
             </form>
+           
         </div>
     );
 };
