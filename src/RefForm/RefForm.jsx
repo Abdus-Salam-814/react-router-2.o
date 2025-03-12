@@ -1,43 +1,31 @@
-import { useState } from "react";
+import { useEffect, useRef } from "react";
 
-const StateForm = () => {
-    const [name, setName] = useState(`abdus salam`);
-    const [email, setEmail] = useState(null);
-    const [pass, setPass] = useState(null);
-    const [error, setError] = useState('')
+const RefForm = () => {
+const nameRef = useRef(null);
+const emailRef = useRef(null);
+const passwordRef = useRef(null);
 
-    const onSubmitHendel = (e) => {
-        e.preventDefault();
-        if(pass.length < 6){
-            setError('Please give password 6 caricter or longer.')
-        }else{
-            setError('');
-            console.log(name, email, pass);
-        }
-       
+useEffect(() => {
+    nameRef.current.focus();
+   
+}, [] )
+
+const onSubmitHendal = e =>{
+    e.preventDefault();
+    console.log(nameRef.current.value)
+    console.log(emailRef.current.value);
+    console.log(passwordRef.current.value)
 
 
-    };
-
-    const onChangeHandelName = (e) => {
-        setName(e.target.value);
-    };
-
-    const onChangeHandelEmail = (e) => {
-        setEmail(e.target.value);
-    };
-
-    const onChangeHandelPassword = (e) => {
-        setPass(e.target.value);
-    };
+}
 
     return (
         <div className="text-center">
-            <form onSubmit={onSubmitHendel}>
+             <form onSubmit={onSubmitHendal} >
                 <input
-                    onChange={onChangeHandelName}
+                    
                     placeholder="Enter name"
-                    value={name}
+                    ref={nameRef}
                     className="bg-gray-100 p-4 mt-6"
                     type="text"
                     name="name"
@@ -45,7 +33,8 @@ const StateForm = () => {
                 />
                 <br />
                 <input
-                    onChange={onChangeHandelEmail}
+                    ref={emailRef}
+                    defaultValue={'abdus@op.io'}
                     className="bg-gray-100 p-4 mt-6"
                     type="email"
                     name="email"
@@ -54,7 +43,7 @@ const StateForm = () => {
                 />
                 <br />
                 <input
-                    onChange={onChangeHandelPassword}  // এখানে onChange ব্যবহার করা হয়েছে
+                    ref={passwordRef}
                     className="bg-gray-100 p-4 mt-6"
                     type="password"
                     name="password"  // এখানে নাম ঠিক করা হয়েছে
@@ -67,13 +56,12 @@ const StateForm = () => {
                     type="submit"
                     value="Submit"
                 />
-                {
+                {/* {
                     error && <p className="text-red-400 mt-6">{error}</p>
-                }
+                } */}
             </form>
-           
         </div>
     );
 };
 
-export default StateForm;
+export default RefForm;

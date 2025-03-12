@@ -16,6 +16,7 @@ const Header = () => {
                 <NavLink to={'/users'}>Users</NavLink>
                 <NavLink to={'/form'}>Form</NavLink>
                 <NavLink to={'/stateForm'}>State Form</NavLink>
+                <NavLink to={'/RefForm'}>Ref Form</NavLink>
                 <NavLink to={'/about'}>About</NavLink>
                 <NavLink to={'/photo'}>Photo</NavLink>
                 <NavLink to={'/photo33'}>Photo</NavLink>

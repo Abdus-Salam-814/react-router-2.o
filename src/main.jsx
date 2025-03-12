@@ -12,6 +12,7 @@ import UserDetails from './userDeatails/UserDetails.jsx'
 import ErrorPage from './ErrorPage/ErrorPage.jsx'
 import Form from './Form/Form.jsx'
 import StateForm from './StateForm/StateForm.jsx'
+import RefForm from './RefForm/RefForm.jsx'
 
 
 const route = createBrowserRouter([
@@ -33,6 +34,11 @@ const route = createBrowserRouter([
     {
       path: '/stateForm',
       element: <StateForm></StateForm>
+      
+    },
+    {
+      path: '/refForm',
+      element: <RefForm></RefForm>
       
     },
     {
