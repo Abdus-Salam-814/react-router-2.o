@@ -14,7 +14,14 @@ import Form from './Form/Form.jsx'
 import StateForm from './StateForm/StateForm.jsx'
 import RefForm from './RefForm/RefForm.jsx'
 import HookForm from './HookForm/HookForm.jsx'
+import ReUseForm from './component/ReUseableComponent/ReUseForm.jsx'
+import ShowReuseForm from './component/ReUseableComponent/ShowReuseForm.jsx'
 
+
+// ফর্ম সাবমিট হ্যান্ডলার ফাংশন
+const handleFormSubmit = () => {
+ 
+};
 
 const route = createBrowserRouter([
   {
@@ -39,12 +46,17 @@ const route = createBrowserRouter([
     },
     {
       path: '/refForm',
-      element: <RefForm></RefForm>
+      element: <ShowReuseForm/>
       
     },
     {
       path: '/hookForm',
       element: <HookForm></HookForm>
+      
+    },
+    {
+      path: '/reuseForm',
+      element: <ShowReuseForm formTitle="Sign Up" btnText ={'Update'} handleSubmit={handleFormSubmit} Children={'Children'} />
       
     },
     {

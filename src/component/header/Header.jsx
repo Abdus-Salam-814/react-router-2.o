@@ -18,6 +18,7 @@ const Header = () => {
                 <NavLink to={'/stateForm'}>State Form</NavLink>
                 <NavLink to={'/RefForm'}>Ref Form</NavLink>
                 <NavLink to={'/hookForm'}>Hook Form</NavLink>
+                <NavLink to={'/reuseForm'}>Reusable Form</NavLink>
                 <NavLink to={'/about'}>About</NavLink>
                 <NavLink to={'/photo'}>Photo</NavLink>
                 <NavLink to={'/photo33'}>Photo</NavLink>
